@@ -1,4 +1,4 @@
-# 即梦 / Seedance 写实剧情片丝滑转场 Skill
+# 即梦 / Seedance 写实剧情片 Skill
 
 把粗略的剧情短片构想，扩写成可直接用于即梦、Seedance 或同类视频生成模型的高密度中文提示词。
 
