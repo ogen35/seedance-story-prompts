@@ -20,6 +20,10 @@
     "should_trigger": true
   },
   {
+    "query": "这个剧情片该用什么摄影机和镜头？帮我把器材写进即梦提示词",
+    "should_trigger": true
+  },
+  {
     "query": "帮我写一个即梦图片提示词：赛博朋克城市海报",
     "should_trigger": false
   },
