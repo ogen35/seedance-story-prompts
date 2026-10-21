@@ -1,4 +1,4 @@
 interface:
-  display_name: "即梦丝滑反差转场提示词"
-  short_description: "把日常随手拍创意转成通往宏伟风光的丝滑即梦转场提示词"
-  default_prompt: "使用 $generate-seedance-smooth-transition-prompts 把我的日常场景与宏伟风光构想写成可直接用于即梦的丝滑转场提示词。"
+  display_name: "即梦 Seedance 2.5 剧情片提示词"
+  short_description: "把一两句剧情想法扩写成可拼接的多片段 Seedance 2.5 提示词"
+  default_prompt: "使用 $seedance-story-prompts 把我的剧情想法写成可直接用于即梦 Seedance 2.5 的多片段提示词。"

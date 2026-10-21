@@ -1,0 +1,34 @@
+[
+  {
+    "query": "女孩在雪夜便利店等一个不会来的人，帮我写成即梦提示词",
+    "should_trigger": true
+  },
+  {
+    "query": "Seedance 做个三段的悬疑短剧：快递员发现包裹在动",
+    "should_trigger": true
+  },
+  {
+    "query": "这两张角色图 @图片1 @图片2，写一段他们吵架的对白视频提示词",
+    "should_trigger": true
+  },
+  {
+    "query": "做个丝滑转场：咖啡拉花变成旋涡星系，即梦用",
+    "should_trigger": true
+  },
+  {
+    "query": "帮我把片段 1 向后延长，接着写店员走过来的戏",
+    "should_trigger": true
+  },
+  {
+    "query": "帮我写一个即梦图片提示词：赛博朋克城市海报",
+    "should_trigger": false
+  },
+  {
+    "query": "帮我写一部三幕剧的剧本大纲，要投稿话剧节",
+    "should_trigger": false
+  },
+  {
+    "query": "剪映里怎么给两段素材加叠化转场？",
+    "should_trigger": false
+  }
+]

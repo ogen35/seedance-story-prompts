@@ -1,51 +1,67 @@
-# 即梦 / Seedance 写实剧情片 Skill
+# 即梦 / Seedance 2.5 剧情片提示词 Skill
 
-把粗略的剧情短片构想，扩写成可直接用于即梦、Seedance 或同类视频生成模型的高密度中文提示词。
+用户只写一两句剧情想法，这个 Skill 把它扩写成一组可直接用于 Seedance 2.5（即梦）的专业提示词：按戏剧节拍拆成多条片段，依次生成后即可剪成一部短片。
 
-这个 Skill 从真实可感的生活场景和人物动作出发，通过视觉收束、遮挡或图形匹配，把镜头自然带入更宏大的电影场景。它强调生活段的写实感、人物和动作连续性，以及宏景揭示后的叙事余韵，适合制作带有剧情感的一镜到底式短片转场。
+写法遵循火山方舟《Doubao Seedance 2.5 提示词指南》和官方 sd25-pe Skill。官方 sd25-pe 负责把一条提示词优化到位；本 Skill 侧重它不覆盖的部分：把故事拆成多段、全组统一角色与素材设定、用视频延长和首帧把片段接起来。
 
 ## 能做什么
 
-- 将一句剧情或场景构想扩写为可复制的视频生成提示词
-- 设计 match cut、遮挡切换、纹理接管、粒子升格等转场
-- 明确时间轴、镜头路径、速度曲线和隐藏切点
-- 锁定人物、手部、服装和道具，减少身份漂移
-- 保留前段的生活质感，并把后段提升为电影级摄影语言
-- 自动补充与方案相关的负面约束
-- 支持单条转场、首尾帧方案和连续转场链
+- 把简单想法补全为有起承转合的故事，保留用户写下的人物、地点、物件和台词
+- 拆成多条可单独提交、可拼接的片段，写清景别、运镜、站位、表演和光影
+- 为每段选择生成方式：参考生成、向后延长上一段、或用上一段尾帧作首帧
+- 用固定的角色名、外观句和风格句锁定跨片段的人物与画风
+- 按官方格式写对白（`{台词}`）、音效（`<>`）和配乐（`()`），规避意外字幕、配乐漏出和眼睛发光
+- 支持 @参考图/视频/音频映射、首尾帧、关键帧、宫格分镜和视频无缝转场
+- 可选丝滑转场模块：从日常画面无缝进入宏景、回忆或梦境
+
+不适用于纯图片提示词，或与视频生成无关的剧本写作。
 
 ## 示例请求
 
 ```text
-使用 $generate-seedance-smooth-transition-prompts，把“咖啡杯中的奶泡旋涡转成海上台风云眼”写成 8 秒、9:16 的即梦丝滑转场提示词。
+女孩在雨夜便利店等一个不会来的人。
+```
+
+```text
+古装短剧，三段：将军出征前和妻子告别，@图片1 是将军，@图片2 是妻子，要有对白。
 ```
 
 ## 安装
 
-你可以直接让 Codex 的 `$skill-installer` 从本 GitHub 仓库安装，也可以手动把整个仓库目录复制到个人或项目的 `.agents/skills/` 目录中。
+Skill 的目录名需要与 `SKILL.md` 中的 `name` 一致，请克隆到名为 `seedance-story-prompts` 的目录。
 
-安装后，在提示词中使用：
+**Claude Code**
 
-```text
-$generate-seedance-smooth-transition-prompts
+```bash
+git clone https://github.com/ogen35/seedance-story-prompts.git ~/.claude/skills/seedance-story-prompts
 ```
 
-Codex 也可以在用户请求与 Skill 描述匹配时自动调用它。
+使用 `/seedance-story-prompts` 调用；请求与 Skill 描述匹配时也会自动调用。
+
+**Codex**
+
+让 `$skill-installer` 从本仓库安装，或手动克隆到个人或项目的 `.agents/skills/seedance-story-prompts`。使用 `$seedance-story-prompts` 调用。
 
 ## 文件结构
 
 ```text
 .
-├── SKILL.md
+├── SKILL.md                      # 工作流、输出结构、审计
 ├── agents/
-│   └── openai.yaml
-└── references/
-    └── transition-framework.md
+│   └── openai.yaml               # Codex 界面元数据
+├── references/
+│   ├── story-example.md          # 完整输出示例
+│   ├── prompt-craft.md           # 景别、运镜、表演、光影、声音、失败模式
+│   ├── assets-and-continuity.md  # 素材映射、延长、首尾帧、关键帧、无缝转场
+│   └── smooth-transition.md      # 可选：丝滑转场模块
+└── evals/
+    ├── evals.json                # 输出质量评测用例
+    └── trigger-evals.json        # 触发边界评测用例
 ```
 
 ## 说明
 
-这是社区创作的提示词工作流，不隶属于或代表即梦、Seedance、字节跳动或 OpenAI。不同模型版本的生成结果可能不同，建议结合实际素材迭代提示词。
+这是社区创作的提示词工作流，不隶属于或代表即梦、Seedance、字节跳动、OpenAI 或 Anthropic。Skill 中的能力数字（单段 30 秒、最多 50 份参考素材等）取自 2026 年 10 月的官方指南，模型更新后请以平台实际为准，并结合生成结果迭代提示词。
 
 ## License
 
