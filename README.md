@@ -64,7 +64,7 @@ git clone https://github.com/ogen35/seedance-story-prompts.git ~/.claude/skills/
 
 ## 说明
 
-这是社区创作的提示词工作流，不隶属于或代表即梦、Seedance、字节跳动、OpenAI 或 Anthropic。Skill 中的能力数字（单段 30 秒、最多 50 份参考素材等）取自 2026 年 10 月的官方指南，模型更新后请以平台实际为准，并结合生成结果迭代提示词。
+这是社区创作的提示词工作流，不隶属于或代表即梦、Seedance、字节跳动、OpenAI 或 Anthropic。表演写法参考了 @TanLuAI 的文章《AI 视频人物演得假？试试用导演思维写提示词》。Skill 中的能力数字（单段 30 秒、最多 50 份参考素材等）取自 2026 年 10 月的官方指南，模型更新后请以平台实际为准，并结合生成结果迭代提示词。
 
 ## License
 
